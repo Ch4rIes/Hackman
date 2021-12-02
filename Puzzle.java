@@ -9,8 +9,8 @@ public class Puzzle {
     private boolean[] filled;
     // the filled array is an array that keep track of which index of the string is guessed right
     int cur_char = 0;
-    public Puzzle() throws FileNotFoundException {
-        p = choose_string();
+    public Puzzle(){
+        p = "dasfasdfasd";
         // p is the puzzle string
         filled = new boolean[p.length()];
         for(int i= 0 ; i < filled.length ; i++) filled[i] = false;
@@ -51,15 +51,5 @@ public class Puzzle {
     }
     public boolean isUnsolved(){
         return cur_char < p.length();
-    }
-    public String choose_string() throws FileNotFoundException {
-        File myObj = new File("words.txt");
-        int line_num = (int)(Math.random() * 45402);
-        Scanner scan = new Scanner(myObj);
-        String dummy = "";
-        for(int i = 0 ; i < line_num ; i++){
-            dummy = scan.nextLine();
-        }
-        return dummy;
     }
 }
